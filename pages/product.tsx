@@ -6,9 +6,11 @@ import { Card } from "antd";
 import { useEffect, useState } from "react";
 import { formatIDR } from "@/utils/globalFunction";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function Product() {
   const [products, setProducts] = useState<any>([]);
+  const [pict, setPict] = useState<string>("");
 
   const router = useRouter();
 
@@ -29,12 +31,12 @@ export default function Product() {
 
   return (<AppLayout>
     <div className="h-32 bg-primary relative"></div>
-    <div className="select-none text-sm flex items-center relative -top-6 rounded-md p-3 shadow bg-white w-3/4 mx-auto">
+    <div className="select-none text-sm flex items-center relative -top-6 rounded-md p-3 shadow bg-white w-full md:w-3/4 mx-auto">
       <Link href={"/"} className="text-primary">Beranda</Link>
       <BiChevronRight size={20} />
       <span className="">Produk Siswa</span>
     </div>
-    <div className="w-3/4 mx-auto flex gap-5 mb-8">
+    <div className="w-full px-5 md:px-0 md:w-3/4 mx-auto flex flex-col md:flex-row gap-5 mb-8">
       <div>
         <FilterProduct />
       </div>
@@ -44,7 +46,16 @@ export default function Product() {
             key={ins}
             hoverable
             className="c-product shadow"
-            cover={<img alt="product" src={dts.photo} />}
+            cover={
+              <Image
+                alt="product"
+                src={dts.photo}
+                width={300}
+                height={201}
+                rel="preload"
+                onError={() => setPict(`/pasar_pagi.png`)}
+              />
+            }
             onClick={() => router.push(`/product/${dts.id}`)}
           >
             <div className="h-10 overflow-hidden leading-5">{dts.product_name}</div>

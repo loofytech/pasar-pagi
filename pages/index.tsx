@@ -7,13 +7,13 @@ export default function Home() {
   const router = useRouter();
 
   return (<AppLayout>
-    <div className="mt-5 flex items-center justify-center w-3/4 mx-auto">
+    <div className="mt-0 flex items-center justify-center w-full md:mt-5 md:w-3/4 mx-auto">
       <HomeBanner />
     </div>
     {/* Shopping */}
-    <div className="mt-12 w-3/4 mx-auto">
+    <div className="mt-5 md:mt-12 w-full px-3 md:w-3/4 md:px-0 mx-auto">
       <h3 className="text-xl font-bold">Let's make shoping fun!</h3>
-      <div className="mt-6 grid grid-cols-4 gap-5">
+      <div className="mt-3 md:mt-6 grid grid-cols-2 md:grid-cols-4 gap-5">
         <div onClick={() => router.push("/product")} className="cursor-pointer gap-3 flex flex-col justify-center items-center">
           <Image src={"/category/1.jpg"} width={300} height={300} alt="" />
           <span className="font-bold">Aksesoris</span>
