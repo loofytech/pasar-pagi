@@ -2,26 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #F0F3F7;
+  min-height: 100vh !important;
+}
+
+.home-banner .slick-list .slick-track .slick-slide div {
+  display: flex;
+}
+
+.home-banner .slick-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  display: flex !important;
+  width: auto !important;
+}
+
+.home-banner .slick-dots li {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+/* .home-banner .slick-dots li button {
+  width: 40px;
+  height: 40px;
+} */
+
+.home-banner .slick-dots li button::before {
+  font-size: 12px !important;
+  color: #F4E52B !important;
+}
+
+.home-banner .slick-arrow {
+  z-index: 1;
+  background: #FFF;
+  border-radius: 50%;
+  top: 45%;
+}
+
+.home-banner .slick-arrow:hover,
+.home-banner .slick-arrow:focus,
+.home-banner .slick-arrow:active {
+  background: #FFF;
+}
+
+.home-banner .slick-arrow.slick-next::before,
+.home-banner .slick-arrow.slick-prev::before {
+  font-size: 40px;
+  content: url("data:image/svg+xml,%0A%3Csvg width='40' height='40' viewBox='0 0 52 52' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='6' y='45' width='40' height='40' rx='20' transform='rotate(-90 6 45)'/%3E%3Cpath d='M17.5 29.5c.55.55 1.478.522 2.061-.061l5.378-5.378L26 23l1.061 1.061 5.378 5.378c.583.583 1.511.611 2.061.061s.522-1.477-.062-2.06l-3.688-3.685-3.688-3.686a1.507 1.507 0 0 0-2.123 0l-7.377 7.371c-.584.583-.612 1.51-.062 2.06' fill='%236C727C'/%3E%3Cdefs%3E%3Cfilter id='filter0_d' x='0' y='0' width='52' height='52' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset dy='1'/%3E%3CfeGaussianBlur stdDeviation='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.192157 0 0 0 0 0.207843 0 0 0 0 0.231373 0 0 0 0.12 0'/%3E%3CfeBlend in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.home-banner .slick-arrow.slick-next {
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  transform: rotate(90deg);
+  opacity: 0;
+  transition: all .2s ease;
+}
+
+.home-banner .slick-arrow.slick-prev {
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  transform: rotate(270deg);
+  opacity: 0;
+  transition: all .2s ease;
+}
+
+.home-banner:hover .slick-arrow.slick-prev {
+  left: -15px;
+  opacity: 1;
+  transition: all .2s ease;
+}
+
+.home-banner:hover .slick-arrow.slick-next {
+  right: -15px;
+  opacity: 1;
+  transition: all .2s ease;
+}
+
+.c-product {
+  width: 100%;
+}
+
+.c-product .ant-card-body {
+  padding: 12px;
 }
