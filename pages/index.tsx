@@ -2,6 +2,7 @@ import Image from "next/image";
 import AppLayout from "@/layouts/AppLayout";
 import HomeBanner from "@/components/HomeBanner";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();
@@ -33,7 +34,7 @@ export default function Home() {
       </div>
     </div>
     {/* Dokumentasi Karya */}
-    <div className="mt-14 w-3/4 mx-auto">
+    {/* <div className="mt-14 w-3/4 mx-auto">
       <h3 className="text-xl font-bold">Dokumentasi Karya Siswa</h3>
       <div className="mt-6 grid grid-cols-4 gap-5">
         <div className="gap-3 flex flex-col justify-center items-center">
@@ -47,6 +48,16 @@ export default function Home() {
         </div>
         <div className="gap-3 flex flex-col justify-center items-center">
           <Image src={"/student_work/4.jpeg"} width={300} height={300} alt="" />
+        </div>
+      </div>
+    </div> */}
+    <div className="parpas-h mt-14">
+      <div className="w-3/4 mx-auto h-full flex items-center gap-5">
+        <div className="relative text-white text-xl font-bold">
+          Pasar Pagi adalah websaite untuk menjual prodak yang di buat santri Pontren Mu Al Ghifari Pasar Pagi, kami hadir dari hal sederhana dimana pasar pagi biasanya identik dengan pasar tradisional orang bertegur sapa dan saling bahagia dalam transaksi jual beli. sepirit itulah yang kami bawa dalam pergerakan kami.
+        </div>
+        <div className="relative">
+          <Link href={"/"} className="font-bold text-sm bg-primary text-white py-3 px-5 rounded-lg">Selengkapnya</Link>
         </div>
       </div>
     </div>
