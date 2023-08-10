@@ -4,15 +4,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { formatIDR } from "@/utils/globalFunction";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function ProductDetail({data}: any) {
   const [quantity, setQuantity] = useState<number>(1);
   const [openNote, setOpenNote] = useState<boolean>(false);
   const [note, setNote] = useState<string>("");
 
+  const router = useRouter();
+
   const handleCloseNote = () => {
     setOpenNote(false);
     setNote("");
+  }
+
+  const handleCheckout = () => {
+    router.push("/product/checkout/" + data.id);
   }
 
   return (<AppLayout>
@@ -97,6 +104,7 @@ export default function ProductDetail({data}: any) {
             <button
               type="button"
               className="w-full border-2 border-primary bg-white text-primary text-sm font-bold h-10 rounded-lg"
+              onClick={handleCheckout}
             >
               BELI LANGSUNG
             </button>

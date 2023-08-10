@@ -52,8 +52,8 @@ export default function Home() {
       </div>
     </div> */}
     <div className="parpas-h mt-14">
-      <div className="w-3/4 mx-auto h-full flex items-center gap-5">
-        <div className="relative text-white text-xl font-bold">
+      <div className="w-full md:w-3/4 mx-auto h-full flex justify-center md:justify-start items-center flex-col md:flex-row gap-5 px-3 md:px-0">
+        <div className="relative text-center md:text-start text-white text-sm md:text-xl font-bold">
           Pasar Pagi adalah websaite untuk menjual prodak yang di buat santri Pontren Mu Al Ghifari Pasar Pagi, kami hadir dari hal sederhana dimana pasar pagi biasanya identik dengan pasar tradisional orang bertegur sapa dan saling bahagia dalam transaksi jual beli. sepirit itulah yang kami bawa dalam pergerakan kami.
         </div>
         <div className="relative">

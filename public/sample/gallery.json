@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Karya Siswa 1",
+    "description": "Berikut adalah prodak dari hasil karya santri mulai dari bahan baku sampai bahan jadi.",
+    "photos": [
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300"
+    ]
+  },
+  {
+    "title": "Karya Siswa 2",
+    "description": "Berikut adalah prodak dari hasil karya santri mulai dari bahan baku sampai bahan jadi.",
+    "photos": [
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300"
+    ]
+  },
+  {
+    "title": "Karya Siswa 3",
+    "description": "Berikut adalah prodak dari hasil karya santri mulai dari bahan baku sampai bahan jadi.",
+    "photos": [
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300"
+    ]
+  },
+  {
+    "title": "Karya Siswa 4",
+    "description": "Berikut adalah prodak dari hasil karya santri mulai dari bahan baku sampai bahan jadi.",
+    "photos": [
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300",
+      "https://source.unsplash.com/random/300x300"
+    ]
+  }
+]
