@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { useState } from "react";
-import { Modal } from "antd";
+import { Modal, Spin } from "antd";
 import { BiMinus, BiSolidBadgeCheck } from "react-icons/bi";
+import { completeCheckoutCOD } from "@/utils/globalFunction";
 
 export default function Payment() {
+  const [checkout, setCheckout] = useState<boolean>(false);
   const [payment, setPayment] = useState<number>(0);
   const [anyAddress, setAnyAddress] = useState<boolean>(false);
   const [openCreateAddress, setOpenCreateAddress] = useState<boolean>(false);
@@ -44,6 +46,14 @@ export default function Payment() {
     }));
   }
 
+  const handleCheckout = () => {
+    setCheckout(true);
+    setTimeout(() => {
+      setCheckout(false);
+      completeCheckoutCOD();
+    }, 3000);
+  }
+
   return (<>
     <div className="border p-5 rounded-lg bg-white">
       <h3 className="font-bold">Pengiriman dan pembayaran</h3>
@@ -71,20 +81,29 @@ export default function Payment() {
         </button>
         <button
           type="button"
-          className={`border-2 h-16 rounded-lg flex items-center px-5 ${payment == 2 ? "border-primary" : ""}`}
-          onClick={() => handlePayment(2)}
+          className={`border-2 h-16 rounded-lg flex items-center cursor-not-allowed bg-gray-300 px-5 ${payment == 2 ? "border-primary" : ""}`}
+          // onClick={() => handlePayment(2)}
         >
           <Image src={"/qris.png"} width={200} height={100} unoptimized alt="qris" />
         </button>
       </div>
-      <button
+      {!checkout && <button
         type="button"
-        className="bg-green-500 text-white font-bold flex justify-center items-center gap-1 w-full h-12 rounded-md mt-5 outline-none disabled:bg-gray-400"
+        className={`bg-green-500 text-white font-bold flex justify-center items-center gap-1 w-full h-12 rounded-md mt-5 outline-none disabled:bg-gray-400`}
+        onClick={handleCheckout}
         disabled={payment == 0 || !anyAddress}
       >
         <BiSolidBadgeCheck size={24} />
         <span>Proses Pembelian</span>
-      </button>
+      </button>}
+      {checkout && <button
+        type="button"
+        className={`bg-green-500 text-white font-bold flex justify-center items-center gap-1 w-full h-12 rounded-md mt-5 outline-none disabled:bg-blue-400`}
+        disabled={true}
+      >
+        <Spin size="small" />
+        <span className="ml-1">Memproses Pesanan</span>
+      </button>}
     </div>
     <Modal
       title=""
@@ -130,7 +149,7 @@ export default function Payment() {
         <div className="flex flex-col gap-1 text-sm mt-3">
           <span className="font-bold">Alamat Lengkap</span>
           <textarea
-            className="h-8 w-full border p-2 outline-none rounded-md resize-none h-20 overflow-auto"
+            className="h-10 w-full border p-2 outline-none rounded-md resize-none h-20 overflow-auto"
             autoComplete="off"
             placeholder="Contoh: Jl. Imam Bonjol"
             value={address.address}

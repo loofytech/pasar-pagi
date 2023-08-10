@@ -19,7 +19,7 @@ export default function ProductDetail({data}: any) {
   }
 
   const handleCheckout = () => {
-    router.push("/product/checkout/" + data.id);
+    router.push("/product/checkout/");
   }
 
   return (<AppLayout>
