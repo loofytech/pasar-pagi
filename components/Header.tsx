@@ -30,7 +30,7 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-9">
           <Link href={"/product"}>Produk Siswa</Link>
           <Link href={"/gallery"}>Galeri Pasar Pagi</Link>
-          <Link href={"#"}>Profil Tim</Link>
+          <Link href={"/teams"}>Profil Tim</Link>
           <Link href={"#"}>Informasi Pasar Pagi</Link>
         </div>
       </div>

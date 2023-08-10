@@ -25,7 +25,7 @@ export default function Checkout() {
   }
 
   return (<AppLayout>
-    <div className="w-2/4 mx-auto mt-5">
+    <div className="w-full md:w-3/4 lg:w-2/4 mx-auto mt-5">
       <div className="bg-white border p-5 rounded-lg">
         <h3 className="font-bold">Barang yang dibeli</h3>
         <div className="flex flex-col gap-2 mt-5">
@@ -33,7 +33,7 @@ export default function Checkout() {
             return (<div className="flex items-start gap-3.5" key={xi}>
               <Image src={xd.photo} width={74} height={74} className="rounded-lg" alt="" />
               <div className="relative">
-                <div className="leading-4 text-sm">{xd.product_name}</div>
+                <div className="leading-4 text-xs md:text-sm">{xd.product_name}</div>
                 <div className="font-bold mt-1.5 text-sm">Rp{formatIDR(xd.product_price)}</div>
                 <div className="flex items-center gap-3 mt-3">
                   {!showNote && <button type="button" className="text-xs bg-primary text-white font-bold h-8 px-2 rounded-md" onClick={handleOpenNote}>Tulis Catatan</button>}
@@ -64,7 +64,7 @@ export default function Checkout() {
         </div>
       </div>
     </div>
-    <div className="w-2/4 mx-auto mt-3 mb-5">
+    <div className="w-full md:w-3/4 lg:w-2/4 mx-auto mt-3 mb-5">
       <Payment />
     </div>
   </AppLayout>)

@@ -23,25 +23,25 @@ export default function ProductDetail({data}: any) {
   }
 
   return (<AppLayout>
-    <div className="w-3/4 mx-auto mt-5">
+    <div className="w-full md:w-3/4 mx-auto mt-5 px-5 md:px-0">
       <div className="text-sm flex items-center select-none">
-        <Link href={"/"} className="text-primary">Beranda</Link>
-        <BiChevronRight size={20} />
-        <Link href={"/product"} className="text-primary whitespace-nowrap">Produk Siswa</Link>
-        <BiChevronRight size={20} />
+        <Link href={"/"} className="hidden md:block text-primary">Beranda</Link>
+        <BiChevronRight size={20} className="hidden md:block" />
+        <Link href={"/product"} className="hidden md:block text-primary whitespace-nowrap">Produk Siswa</Link>
+        <BiChevronRight size={20} className="hidden md:block" />
         <span className="truncate">{data.product_name}</span>
       </div>
     </div>
-    <div className="flex gap-10 w-3/4 mx-auto mt-5 mb-10">
-      <div style={{height: 400}} className="w-80 sticky top-28 overflow-hidden rounded-lg">
-        <Image src={data.photo_detail} width={320} height={400} alt="" />
+    <div className="flex gap-5 md:gap-10 w-full md:w-3/4 mx-auto mt-5 mb-10 px-5 md:px-0 flex-col md:flex-row">
+      <div style={{height: 400}} className="w-full md:w-80 static md:sticky top-28 overflow-hidden rounded-lg">
+        <Image src={data.photo_detail} width={320} height={400} className="w-full md:w-80" alt="" />
       </div>
       <div className="flex-1">
         <h1 className="text-lg font-bold leading-5">{data.product_name}</h1>
         <div className="text-2xl text-primary font-bold mt-3">Rp{formatIDR(data.product_price)}</div>
-        <div className="text-sm mt-10" dangerouslySetInnerHTML={{__html: data.product_description}} />
+        <div className="text-sm mt-5 md:mt-10" dangerouslySetInnerHTML={{__html: data.product_description}} />
       </div>
-      <div className="w-64">
+      <div className="w-full md:w-64">
         <div className="w-full sticky top-28 bg-white border rounded-md p-3 rounded-lg">
           <div className="text-sm font-bold">Atur jumlah dan catatan</div>
           <div className="flex items-center gap-5 mt-3">
