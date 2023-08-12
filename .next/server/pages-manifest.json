@@ -1,0 +1,14 @@
+{
+  "/_document": "pages/_document.js",
+  "/about": "pages/about.html",
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/api/hello": "pages/api/hello.js",
+  "/product": "pages/product.html",
+  "/": "pages/index.html",
+  "/gallery": "pages/gallery.html",
+  "/product/checkout": "pages/product/checkout.html",
+  "/teams": "pages/teams.html",
+  "/product/[slug]": "pages/product/[slug].js",
+  "/404": "pages/404.html"
+}
