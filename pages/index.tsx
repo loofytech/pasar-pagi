@@ -37,7 +37,7 @@ export default function Home() {
     </div>
     {/* Shopping */}
     <div className="mt-5 md:mt-12 w-full px-3 md:w-3/4 md:px-0 mx-auto">
-      <h3 className="text-xl font-bold">Let's make shoping fun!</h3>
+      <h3 className="text-xl font-bold">Let&#39;s make shoping fun!</h3>
       <div className="mt-3 md:mt-6 grid grid-cols-2 md:grid-cols-4 gap-5">
         <div onClick={() => router.push("/product")} className="cursor-pointer gap-3 flex flex-col justify-center items-center">
           <Image src={"/category/1.jpg"} width={300} height={300} alt="" />
