@@ -2,8 +2,19 @@ import { SnippetsOutlined, SearchOutlined, ShoppingCartOutlined } from "@ant-des
 import { BiMenu } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
+import { Drawer } from "antd";
+import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Header() {
+  const [menuMobile, setMenuMobile] = useState<boolean>(false);
+  const router = useRouter();
+
+  const goToPath = (path: string) => {
+    setMenuMobile(false);
+    return router.push(path);
+  }
+
   return (<>
     {/* <div className="flex items-center justify-between text-xs bg-secondary py-2 px-10">
       <div className="flex items-center gap-2">
@@ -19,6 +30,20 @@ export default function Header() {
         <Link href={"#"}>Informasi Pasar Pagi</Link>
       </div>
     </div> */}
+    <Drawer
+      title="Navigasi"
+      placement="left"
+      closable={true}
+      onClose={() => setMenuMobile(false)}
+      open={menuMobile}
+    >
+      <div className="flex gap-3 flex-col">
+        <span onClick={() => goToPath("/product")} className="font-bold text-primary text-lg uppercase">Produk Siswa</span>
+        <span onClick={() => goToPath("/gallery")} className="font-bold text-primary text-lg uppercase">Galeri Pasar Pagi</span>
+        <span onClick={() => goToPath("/teams")} className="font-bold text-primary text-lg uppercase">Profil Tim</span>
+        <span onClick={() => goToPath("/about")} className="font-bold text-primary text-lg uppercase">Informasi Pasar Pagi</span>
+      </div>
+    </Drawer>
     <div className="bg-white sticky top-0 z-50">
       <div className="flex items-center justify-between text-xs bg-secondary py-2 px-5 md:px-10">
         <div className="flex items-center gap-2">
@@ -44,12 +69,12 @@ export default function Header() {
             <input type="text" placeholder="Cari di Pasar Pagi" className="text-sm w-full py-2 outline-none" autoComplete="off" />
           </div>
         </div>
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <div className="flex items-center gap-5">
             <div className="flex items-center cursor-pointer relative">
               <ShoppingCartOutlined style={{fontSize: 24}} />
             </div>
-            {/* <div className="w-1 h-7 border-r-2"></div>
+            <div className="w-1 h-7 border-r-2"></div>
             <div className="flex items-center gap-2">
               <button
                 type="button"
@@ -63,10 +88,10 @@ export default function Header() {
               >
                 Daftar
               </button>
-            </div> */}
+            </div>
           </div>
-        </div>
-        <button type="button" className="outline-none select-none block md:hidden">
+        </div> */}
+        <button type="button" className="outline-none select-none block md:hidden" onClick={() => setMenuMobile(true)}>
           <BiMenu size={32} className="text-gray-700" />
         </button>
       </div>
