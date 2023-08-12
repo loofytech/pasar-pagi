@@ -31,7 +31,7 @@ export default function Header() {
           <Link href={"/product"}>Produk Siswa</Link>
           <Link href={"/gallery"}>Galeri Pasar Pagi</Link>
           <Link href={"/teams"}>Profil Tim</Link>
-          <Link href={"#"}>Informasi Pasar Pagi</Link>
+          <Link href={"/about"}>Informasi Pasar Pagi</Link>
         </div>
       </div>
       <div className="px-5 md:px-10 py-3 gap-10 flex items-center justify-between">

@@ -13,9 +13,9 @@ export default function Footer() {
           <p className="font-bold mb-3">Jelajahi Pasar Pagi</p>
           <div className="flex text-gray-700 flex-col gap-2 text-sm">
             <Link href={"/product"} className="whitespace-nowrap hover:text-primary">Produk Siswa</Link>
-            <Link href={"#"} className="whitespace-nowrap hover:text-primary">Profil Tim</Link>
+            <Link href={"teams"} className="whitespace-nowrap hover:text-primary">Profil Tim</Link>
             <Link href={"/gallery"} className="whitespace-nowrap hover:text-primary">Galeri Pasar Pagi</Link>
-            <Link href={"#"} className="whitespace-nowrap hover:text-primary">Informasi Pasar Pagi</Link>
+            <Link href={"/about"} className="whitespace-nowrap hover:text-primary">Informasi Pasar Pagi</Link>
           </div>
           <p className="font-bold mt-5 mb-3 text-center md:text-left">Temukan Pasar Pagi</p>
           <div className="flex text-gray-700 gap-1.5 text-sm justify-center md:justify-start">

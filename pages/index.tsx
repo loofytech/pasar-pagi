@@ -57,7 +57,7 @@ export default function Home() {
           Pasar Pagi adalah websaite untuk menjual prodak yang di buat santri Pontren Mu Al Ghifari Pasar Pagi, kami hadir dari hal sederhana dimana pasar pagi biasanya identik dengan pasar tradisional orang bertegur sapa dan saling bahagia dalam transaksi jual beli. sepirit itulah yang kami bawa dalam pergerakan kami.
         </div>
         <div className="relative">
-          <Link href={"/"} className="font-bold text-sm bg-primary text-white py-3 px-5 rounded-lg">Selengkapnya</Link>
+          <Link href={"/about"} className="font-bold text-sm bg-primary text-white py-3 px-5 rounded-lg">Selengkapnya</Link>
         </div>
       </div>
     </div>
