@@ -1,9 +1,12 @@
 FROM node:18-alpine AS deps
+RUN apk --no-cache add curl
+RUN apk add busybox
 RUN apk add --no-cache libc6-compat
+
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN  npm install --production
+RUN  npm install
 
 FROM node:18-alpine AS builder
 WORKDIR /app
@@ -26,6 +29,8 @@ RUN adduser --system --uid 1001 nextjs
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/next.config.js ./next.config.js
 
 USER nextjs
 
