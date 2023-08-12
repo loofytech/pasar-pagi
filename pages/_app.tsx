@@ -5,9 +5,6 @@ import NextNProgress from "nextjs-progressbar";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (<>
-    <Head>
-      <title>Pasar Pagi</title>
-    </Head>
     <Component {...pageProps} />
     <NextNProgress color="#4D7EFF" />
   </>);

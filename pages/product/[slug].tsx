@@ -5,6 +5,7 @@ import Image from "next/image";
 import { formatIDR } from "@/utils/globalFunction";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { NextSeo } from "next-seo";
 
 export default function ProductDetail({data}: any) {
   const [quantity, setQuantity] = useState<number>(1);
@@ -23,6 +24,29 @@ export default function ProductDetail({data}: any) {
   }
 
   return (<AppLayout>
+    <NextSeo
+      title={`${data.product_name}`}
+      description={`Loofytech adalah jasa, dibangun oleh tenaga profesional dan berpengalaman dibidangnya, cukup dengan modal 500.000`}
+      openGraph={{
+        title: `${data.product_name}`,
+        description: `Loofytech adalah jasa, dibangun oleh tenaga profesional dan berpengalaman dibidangnya, cukup dengan modal 500.000`,
+        url: `https://pasar-pagi.loofytech.com${router.asPath}`,
+        images: [
+          {url: `https://pasar-pagi.loofytech.com/pasar_pagi.png`}
+        ],
+        siteName: `${data.product_name}`
+      }}
+      additionalMetaTags={[{
+        property: 'keywords',
+        content: 'loofytech, jasa it loofytech, jasa website loofytech, jasa aplikasi loofytech, jasa design produk loofytech, loofytech konsultan, loofytech consultant, aplikasi kantor loofytech, aplikasi kasir loofytech, aplikasi pembayaran loofytech, aplikasi pergudangan loofytech, it loofy, loofytech digital'
+      }, {
+        name: 'application-name',
+        content: `${data.product_name}`
+      }, {
+        httpEquiv: 'x-ua-compatible',
+        content: 'IE=edge; chrome=1'
+      }]}
+    />
     <div className="w-full md:w-3/4 mx-auto mt-5 px-5 md:px-0">
       <div className="text-sm flex items-center select-none">
         <Link href={"/"} className="hidden md:block text-primary">Beranda</Link>

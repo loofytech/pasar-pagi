@@ -3,11 +3,35 @@ import AppLayout from "@/layouts/AppLayout";
 import HomeBanner from "@/components/HomeBanner";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 
 export default function Home() {
   const router = useRouter();
 
   return (<AppLayout>
+    <NextSeo
+      title={`Online Mall Pasar Pagi - Belanja Online Aman, Nyaman & Terpercaya!`}
+      description={`Loofytech adalah jasa, dibangun oleh tenaga profesional dan berpengalaman dibidangnya, cukup dengan modal 500.000`}
+      openGraph={{
+        title: "Online Mall Pasar Pagi - Belanja Online Aman, Nyaman & Terpercaya!",
+        description: `Loofytech adalah jasa, dibangun oleh tenaga profesional dan berpengalaman dibidangnya, cukup dengan modal 500.000`,
+        url: `https://pasar-pagi.loofytech.com${router.asPath}`,
+        images: [
+          {url: `https://pasar-pagi.loofytech.com/pasar_pagi.png`}
+        ],
+        siteName: "Online Mall Pasar Pagi - Belanja Online Aman, Nyaman & Terpercaya!"
+      }}
+      additionalMetaTags={[{
+        property: 'keywords',
+        content: 'loofytech, jasa it loofytech, jasa website loofytech, jasa aplikasi loofytech, jasa design produk loofytech, loofytech konsultan, loofytech consultant, aplikasi kantor loofytech, aplikasi kasir loofytech, aplikasi pembayaran loofytech, aplikasi pergudangan loofytech, it loofy, loofytech digital'
+      }, {
+        name: 'application-name',
+        content: 'Online Mall Pasar Pagi - Belanja Online Aman, Nyaman & Terpercaya!'
+      }, {
+        httpEquiv: 'x-ua-compatible',
+        content: 'IE=edge; chrome=1'
+      }]}
+    />
     <div className="mt-0 flex items-center justify-center w-full md:mt-5 md:w-3/4 mx-auto">
       <HomeBanner />
     </div>

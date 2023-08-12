@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { formatIDR } from "@/utils/globalFunction";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { NextSeo } from "next-seo";
 
 export default function Product() {
   const [products, setProducts] = useState<any>([]);
@@ -30,6 +31,29 @@ export default function Product() {
   }, []);
 
   return (<AppLayout>
+    <NextSeo
+      title={`Online Mall Pasar Pagi - Belanja Online Aman, Nyaman & Terpercaya!`}
+      description={`Loofytech adalah jasa, dibangun oleh tenaga profesional dan berpengalaman dibidangnya, cukup dengan modal 500.000`}
+      openGraph={{
+        title: "Online Mall Pasar Pagi - Belanja Online Aman, Nyaman & Terpercaya!",
+        description: `Loofytech adalah jasa, dibangun oleh tenaga profesional dan berpengalaman dibidangnya, cukup dengan modal 500.000`,
+        url: `https://pasar-pagi.loofytech.com${router.asPath}`,
+        images: [
+          {url: `https://pasar-pagi.loofytech.com/pasar_pagi.png`}
+        ],
+        siteName: "Online Mall Pasar Pagi - Belanja Online Aman, Nyaman & Terpercaya!"
+      }}
+      additionalMetaTags={[{
+        property: 'keywords',
+        content: 'loofytech, jasa it loofytech, jasa website loofytech, jasa aplikasi loofytech, jasa design produk loofytech, loofytech konsultan, loofytech consultant, aplikasi kantor loofytech, aplikasi kasir loofytech, aplikasi pembayaran loofytech, aplikasi pergudangan loofytech, it loofy, loofytech digital'
+      }, {
+        name: 'application-name',
+        content: 'Online Mall Pasar Pagi - Belanja Online Aman, Nyaman & Terpercaya!'
+      }, {
+        httpEquiv: 'x-ua-compatible',
+        content: 'IE=edge; chrome=1'
+      }]}
+    />
     <div className="h-32 bg-primary relative"></div>
     <div className="select-none text-sm flex items-center relative -top-6 rounded-md p-3 shadow bg-white w-full md:w-3/4 mx-auto">
       <Link href={"/"} className="text-primary">Beranda</Link>
