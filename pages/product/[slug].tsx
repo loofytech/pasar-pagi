@@ -30,9 +30,9 @@ export default function ProductDetail({data}: any) {
       openGraph={{
         title: `${data.product_name}`,
         description: `Loofytech adalah jasa, dibangun oleh tenaga profesional dan berpengalaman dibidangnya, cukup dengan modal 500.000`,
-        url: `https://pasar-pagi.loofytech.com${router.asPath}`,
+        url: `${process.env.HOST_NAME}${router.asPath}`,
         images: [
-          {url: `https://pasar-pagi.loofytech.com/pasar_pagi.png`}
+          {url: `${process.env.HOST_NAME}/pasar_pagi.png`}
         ],
         siteName: `${data.product_name}`
       }}
