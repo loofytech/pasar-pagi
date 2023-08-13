@@ -15,6 +15,9 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    HOST_NAME: 'https://pasar-pagi.shop',
+  },
 }
 
 module.exports = nextConfig
